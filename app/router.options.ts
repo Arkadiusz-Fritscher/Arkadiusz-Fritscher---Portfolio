@@ -10,7 +10,7 @@ export default <RouterConfig>{
     if (to.hash) {
       return {
         el: to.hash,
-        top: -10,
+        top: 20,
         behavior: "smooth",
       };
     }

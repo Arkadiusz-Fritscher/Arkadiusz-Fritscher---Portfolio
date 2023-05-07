@@ -21,8 +21,9 @@ useServerSeoMeta({
 <template>
   <TheNav />
   <TheHero />
-  <TheProjectsList />
+  <TheProjects />
   <TheAbout />
+  <TheContact />
   <TheFooter />
 </template>
 

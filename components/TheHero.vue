@@ -56,12 +56,14 @@ onUnmounted(() => {
 
 <style scoped>
 .header {
-  min-height: 400px;
-  height: 100vh;
+  min-height: 90vh;
+  /* height: 60vh; */
   max-height: 982px;
   display: flex;
   align-items: center;
   position: relative;
+  margin-bottom: 32px;
+  overflow-x: hidden;
 }
 
 .hero {
@@ -90,7 +92,6 @@ onUnmounted(() => {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
-  font-size: clamp(4.6875rem, 3.0873rem + 3.3467vw, 6.25rem);
 }
 
 .hero__description {
@@ -104,6 +105,8 @@ onUnmounted(() => {
 .btn__cta {
   /* Mobile only */
   margin-top: 32px;
+  width: calc(100% - 48px);
+  max-width: 360px;
 }
 
 .hero__image {
