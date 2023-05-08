@@ -30,6 +30,12 @@ body {
   line-height: 1.4;
 }
 
+html,
+body,
+#__nuxt {
+  min-height: 100vh;
+}
+
 /* --- Container --- */
 /* .wrapper {
   width: 100%;

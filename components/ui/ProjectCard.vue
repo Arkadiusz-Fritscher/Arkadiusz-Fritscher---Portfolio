@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Project } from "@/projects";
+
 defineProps({
   project: {
     type: Object as () => Project,
@@ -159,6 +160,7 @@ defineProps({
   /* padding: 20px; */
   margin: 1vw;
   outline: 1vw solid rgba(255, 255, 255, 0.03);
+  /* transform-origin: center; */
 }
 
 @media (min-width: 675px) {

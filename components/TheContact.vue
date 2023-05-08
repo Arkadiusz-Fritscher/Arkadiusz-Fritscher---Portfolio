@@ -27,7 +27,8 @@
 
 <style scoped>
 #contact {
-  min-height: 100vh;
+  min-height: 70vh;
+  max-height: 800px;
 }
 .contact-wrapper {
   /* min-height: 80vh; */

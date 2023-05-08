@@ -1,5 +1,114 @@
 <script setup lang="ts">
 import { projects } from "@/projects";
+import { gsap } from "gsap";
+import { observe } from "@/composables/animations";
+
+const getImgTilt = (event: MouseEvent) => {
+  const imgElement = event.target as HTMLElement | undefined;
+
+  if (!imgElement || !event) return;
+
+  const { offsetX, offsetY } = event;
+
+  const { clientHeight, clientWidth } = imgElement;
+
+  const img = { x: clientWidth, y: clientHeight };
+  const mouse = { x: offsetX, y: offsetY };
+
+  const pos = {
+    x: mouse.x - img.x / 2,
+    y: mouse.y - img.y / 2,
+  };
+
+  const imgTilt = {
+    x: Number((pos.y / img.y).toFixed(4)),
+    y: Number(-(pos.x / img.x).toFixed(4)),
+  };
+
+  return imgTilt;
+};
+
+const tiltCard = (enterEvent: MouseEvent) => {
+  const img = enterEvent.target as HTMLElement | undefined;
+  if (!img) return;
+
+  const transformPerspective = 120;
+
+  gsap.set(enterEvent.target, {
+    rotationY: 0,
+    rotationX: 0,
+    transformPerspective,
+    duration: 0,
+    // transformPerspective: 60,
+  });
+
+  img.addEventListener(
+    "mousemove",
+    (mouseEvent) => {
+      const imgTilt = getImgTilt(mouseEvent);
+      if (!imgTilt?.x || !imgTilt?.y) {
+        gsap.to(mouseEvent.target, {
+          rotationY: 0,
+          rotationX: 0,
+          ease: "Power2.easeOut",
+          transformPerspective,
+          // transformPerspective: 80,
+        });
+
+        return;
+      }
+
+      gsap.to(enterEvent.target, {
+        rotationY: imgTilt.y,
+        rotationX: imgTilt.x,
+        ease: "Power2.easeOut",
+        transformPerspective,
+        duration: 1.1,
+        // transformPerspective: 60,
+      });
+    },
+    true
+  );
+};
+
+const resetImage = (event: MouseEvent) => {
+  gsap.to(event.target, {
+    rotationY: 0,
+    rotationX: 0,
+    transformPerspective: 120,
+    ease: "Power2.easeOut",
+    delay: 0.2,
+    duration: 2,
+  });
+};
+
+onMounted(() => {
+  // Add and remove images event listener if in or outside view
+  observe(".project__card", (entries, observer) => {
+    entries.forEach((entry) => {
+      const images = entry.target.querySelectorAll("img");
+
+      if (entry.isIntersecting) {
+        images.forEach((img) => {
+          img.addEventListener("mouseenter", tiltCard);
+          img.addEventListener("mouseleave", resetImage);
+        });
+      } else {
+        images.forEach((img) => {
+          gsap.set(img, {
+            rotationY: 0,
+            rotationX: 0,
+            transformPerspective: 0,
+            duration: 0,
+          });
+
+          img.removeEventListener("mouseenter", tiltCard);
+          img.removeEventListener("mouseleave", resetImage);
+        });
+      }
+    });
+  });
+});
 </script>
 
 <template>
@@ -11,17 +120,10 @@ import { projects } from "@/projects";
           v-for="project in projects"
           :key="project.id"
           :project="project"
+          :data-project="project.id"
         />
       </div>
     </div>
-
-    <div class="bg">
-      <span class="spark spark--1"> </span>
-      <span class="spark spark--2"> </span>
-      <span class="spark spark--3"> </span>
-    </div>
-
-    <!-- <span class="spark spark--2"> </span> -->
   </main>
 </template>
 
@@ -29,64 +131,11 @@ import { projects } from "@/projects";
 #projects {
   position: relative;
   width: 100%;
-
-  /* background-color: antiquewhite; */
 }
 .project__list {
   display: flex;
   flex-direction: column;
   row-gap: 48px;
   align-items: flex-start;
-}
-
-.bg {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: -10;
-  pointer-events: none;
-}
-
-.spark {
-  width: 80vw;
-  height: 60vh;
-  max-width: 800px;
-  max-height: 800px;
-  position: absolute;
-  filter: blur(90vw);
-  transform: translateX(-50%);
-  transform-origin: center;
-  pointer-events: none;
-  opacity: 0.4;
-}
-
-.spark--1 {
-  background-color: var(--color-highlight);
-  top: 10%;
-  left: 0;
-  opacity: 0.6;
-}
-
-.spark--2 {
-  background-color: #ee79ed;
-  top: 37%;
-  left: 100%;
-  width: 100vh;
-  height: 80vh;
-  /* opacity: 0.3; */
-}
-.spark--3 {
-  background-color: #ab80eb;
-  top: 64%;
-  left: 20%;
-  width: 70vh;
-  height: 60vh;
-  /* opacity: 0.4; */
-}
-
-@media (min-width: 675px) {
-  .spark {
-    filter: blur(40vh);
-  }
 }
 </style>

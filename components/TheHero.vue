@@ -120,7 +120,7 @@ onUnmounted(() => {
   min-width: 470px;
   max-width: 900px;
   max-height: 100%;
-  z-index: -1;
+  z-index: -50;
   pointer-events: none;
   opacity: 0.7;
   display: none;
