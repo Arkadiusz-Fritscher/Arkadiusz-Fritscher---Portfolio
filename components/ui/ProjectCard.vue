@@ -1,48 +1,49 @@
 <script setup lang="ts">
 import { Project } from "@/projects";
 
-defineProps({
+const props = defineProps({
   project: {
     type: Object as () => Project,
     required: true,
   },
 });
+
+onMounted(() => {});
 </script>
 
 <template>
-  <div class="project__card">
-    <div class="card__content">
-      <span class="card__date">{{ project.date }}</span>
-      <h3 class="card__title text--h3">{{ project.title }}</h3>
-      <p class="card__description text--body">{{ project.description }}</p>
-      <div class="card__details">
-        <ul class="card__details__list">
-          <li class="card__details__list__title">Services</li>
-          <li
-            class="card__details__list__entry text--caption"
-            v-for="(service, i) of project.services"
-            :key="i"
-          >
-            {{ service }}
-          </li>
-        </ul>
+  <div class="project__card" :data-project="project.id">
+    <div class="card__content--wrapper">
+      <div class="card__content">
+        <span class="card__date">{{ project.date }}</span>
+        <h3 class="card__title text--h3">{{ project.title }}</h3>
+        <p class="card__description text--body">{{ project.description }}</p>
+        <div class="card__details">
+          <ul class="card__details__list">
+            <li class="card__details__list__title">Services</li>
+            <li
+              class="card__details__list__entry text--caption"
+              v-for="(service, i) of project.services"
+              :key="i"
+            >
+              {{ service }}
+            </li>
+          </ul>
 
-        <ul class="card__details__list">
-          <li class="card__details__list__title">Stack</li>
-          <li
-            class="card__details__list__entry text--caption"
-            v-for="(entry, i) of project.stack"
-            :key="i"
-          >
-            {{ entry }}
-          </li>
-        </ul>
-      </div>
-      <div class="card__cta">
-        <button class="btn">Live</button>
-        <button class="btn btn--secondary">Github</button>
+          <ul class="card__details__list">
+            <li class="card__details__list__title">Stack</li>
+            <li class="card__details__list__entry text--caption" v-for="(entry, i) of project.stack" :key="i">
+              {{ entry }}
+            </li>
+          </ul>
+        </div>
+        <div class="card__cta">
+          <button class="btn">Live</button>
+          <button class="btn btn--secondary">Github</button>
+        </div>
       </div>
     </div>
+
     <div class="card__images">
       <img
         :alt="project.title"
@@ -65,11 +66,20 @@ defineProps({
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  position: relative;
+}
+
+.card__content--wrapper {
+  flex: 1 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: flex-start;
+  position: relative;
 }
 
 /* Card content  */
 .card__content {
-  flex: 1 100%;
   max-width: 48ch;
   display: flex;
   flex-direction: column;
@@ -152,6 +162,7 @@ defineProps({
   flex-direction: column;
   row-gap: 8px;
   margin-inline: -12px;
+  position: relative;
 }
 
 .card__images img {
@@ -169,13 +180,18 @@ defineProps({
     column-gap: 24px;
   }
 
-  .card__content {
+  .card__content--wrapper {
     flex: 0 0 41.67%;
-    max-width: 48ch;
     position: sticky;
     position: -webkit-sticky;
-    top: 20%;
-    margin-bottom: 30vh;
+    /* transform: translateY(-50%); */
+    top: 100px;
+  }
+  .card__content {
+    max-width: 48ch;
+
+    /* 
+    margin-bottom: 30vh; */
   }
 
   .card__details__list {

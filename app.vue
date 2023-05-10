@@ -1,50 +1,15 @@
-<script setup lang="ts">
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
-
-let tl: gsap.core.Timeline | undefined;
-
-onMounted(() => {
-  tl = gsap.timeline({
-    scrollTrigger: {
-      // trigger: "#parallax_bg",
-      start: "top top",
-      end: "bottom top",
-      scrub: true,
-    },
-  });
-
-  gsap.utils.toArray(".spark").forEach((spark) => {
-    const el = spark as HTMLElement;
-    const depth = Number(el.dataset.depth);
-    const movement = -(el.offsetHeight * depth);
-
-    console.log(movement);
-
-    if (!tl) return;
-
-    tl.to(
-      el,
-      {
-        y: movement,
-        ease: "none",
-      },
-      0
-    );
-  });
-});
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <NuxtPage />
-  <div id="parallax_bg">
-    <span class="spark spark--1" data-depth="1.7">
-      <!-- <img :src="sparkImg" alt="" /> -->
-    </span>
-    <span class="spark spark--2" data-depth=".7"></span>
-    <span class="spark spark--3" data-depth="1.5"></span>
+  <div class="" data-scroll-container>
+    <NuxtPage />
+    <div id="parallax_bg">
+      <span class="spark spark--1" data-depth="1.7">
+        <!-- <img :src="sparkImg" alt="" /> -->
+      </span>
+      <span class="spark spark--2" data-depth=".7"></span>
+      <span class="spark spark--3" data-depth="1.5"></span>
+    </div>
   </div>
 </template>
 
