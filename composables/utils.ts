@@ -1,7 +1,10 @@
-export const random = (min: number, max: number) =>
-  Math.floor(Math.random() * (max - min)) + min;
+export const random = (min: number, max: number) => Math.floor(Math.random() * (max - min)) + min;
 
-export const scrollDistance = (callback: Function, refresh: number = 66) => {
+export const roundTo = (n: number, place: number) => {
+  return +(Math.round(n + "e+" + place) + "e-" + place);
+};
+
+export const scrollDistance = (callback: CallableFunction, refresh: number = 66) => {
   // Make sure a valid callback was provided
   if (!callback || typeof callback !== "function") return;
 
@@ -53,4 +56,11 @@ export const scrollDistance = (callback: Function, refresh: number = 66) => {
     },
     false
   );
+};
+
+export const MathUtils = {
+  // map number x from range [a, b] to [c, d]
+  map: (x: number, a: number, b: number, c: number, d: number) => ((x - a) * (d - c)) / (b - a) + c,
+  // linear interpolation
+  lerp: (a: number, b: number, n: number) => (1 - n) * a + n * b,
 };

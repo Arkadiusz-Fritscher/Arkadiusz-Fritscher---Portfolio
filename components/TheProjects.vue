@@ -1,7 +1,12 @@
 <script setup lang="ts">
 import { projects } from "@/projects";
+import { scrollAnimation } from "@/components/project/projectAnimation";
 
-onMounted(() => {});
+onMounted(() => {
+  const projectEl = Array.from(document.querySelectorAll(`[data-project]`));
+  if (!projectEl.length) return;
+  scrollAnimation(projectEl);
+});
 </script>
 
 <template>
@@ -9,7 +14,7 @@ onMounted(() => {});
     <div class="container">
       <UiSectionTitle>Projects</UiSectionTitle>
       <div v-if="projects.length" class="project__list">
-        <UiProjectCard
+        <ProjectCard
           v-for="project in projects"
           :key="project.id"
           :project="project"
@@ -28,7 +33,7 @@ onMounted(() => {});
 .project__list {
   display: flex;
   flex-direction: column;
-  row-gap: 48px;
+  row-gap: 20vh;
   align-items: flex-start;
 }
 </style>

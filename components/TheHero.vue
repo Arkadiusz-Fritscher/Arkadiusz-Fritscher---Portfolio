@@ -1,43 +1,33 @@
 <script setup lang="ts">
 const heroCenterRef = ref();
-const heroImage = ref();
+import { roundTo } from "@/composables/utils";
 
-const resetHeroImagePos = () => {
-  heroImage.value.style.top = `${
-    heroCenterRef.value.offsetTop + heroCenterRef.value.clientHeight / 2
-  }px`;
-
-  heroImage.value.style.display = "initial";
+const positionHeroImage = () => {
+  document.documentElement.style.setProperty(
+    "--hero-top",
+    `${roundTo(heroCenterRef.value.offsetTop + heroCenterRef.value.clientHeight / 2, 2)}px`
+  );
 };
 
 onMounted(() => {
-  resetHeroImagePos();
-  window.addEventListener("resize", resetHeroImagePos);
-});
-
-onUnmounted(() => {
-  window.removeEventListener("resize", resetHeroImagePos);
+  positionHeroImage();
+  window.addEventListener("resize", positionHeroImage);
 });
 </script>
 
 <template>
-  <header class="header" id="home">
+  <header class="header" id="home" ref="hero">
     <div class="hero">
       <div class="hero__title text--caption">Arkadiusz Fritscher</div>
-      <h1 class="hero__headline text--hero" ref="heroCenterRef">
-        Frontend developer
-      </h1>
+      <h1 class="hero__headline text--hero" ref="heroCenterRef">Frontend developer</h1>
       <p class="hero__description text--body">
-        As a self-taught frontend developer, I am passionate about creating
-        engaging user experiences that drive results. My goal is to work at a
-        company where I can bring innovative front-end designs and development
-        solutions to life. Let's work together to achieve your goals
+        As a self-taught frontend developer, I am passionate about creating engaging user experiences that
+        drive results. My goal is to work at a company where I can bring innovative front-end designs and
+        development solutions to life. Let's work together to achieve your goals
       </p>
-      <button class="btn__cta btn" @click="$router.push('#contact')">
-        Contact me
-      </button>
+      <button class="btn__cta btn" @click="$router.push('#contact')">Contact me</button>
     </div>
-    <img
+    <!-- <img
       src=""
       alt=""
       ref="heroImage"
@@ -50,20 +40,22 @@ onUnmounted(() => {
         @/assets/images/hero@0.75.jpg 675w,
         @/assets/images/hero@1.jpg    900w
       "
-    />
+    /> -->
   </header>
 </template>
 
 <style scoped>
 .header {
-  min-height: 90vh;
+  min-height: 600px;
+  height: 90vh;
   /* height: 60vh; */
   max-height: 982px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   position: relative;
   margin-bottom: 32px;
   overflow-x: hidden;
+  margin-bottom: 20vh;
 }
 
 .hero {
@@ -91,7 +83,7 @@ onUnmounted(() => {
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  position: relative;
+  /* position: relative; */
 }
 
 .hero__description {
@@ -123,7 +115,7 @@ onUnmounted(() => {
   z-index: -50;
   pointer-events: none;
   opacity: 0.7;
-  display: none;
+  /* display: none; */
 }
 
 @media (max-width: 765px) {

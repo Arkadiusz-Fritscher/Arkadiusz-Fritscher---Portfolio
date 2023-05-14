@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Project } from "@/projects";
+import type { Project } from "@/projects";
 
 const props = defineProps({
   project: {
@@ -7,14 +7,12 @@ const props = defineProps({
     required: true,
   },
 });
-
-onMounted(() => {});
 </script>
 
 <template>
-  <div class="project__card" :data-project="project.id">
+  <div class="project__card">
     <div class="card__content--wrapper">
-      <div class="card__content">
+      <div class="card__content" data-warp>
         <span class="card__date">{{ project.date }}</span>
         <h3 class="card__title text--h3">{{ project.title }}</h3>
         <p class="card__description text--body">{{ project.description }}</p>
@@ -38,25 +36,31 @@ onMounted(() => {});
           </ul>
         </div>
         <div class="card__cta">
-          <button class="btn">Live</button>
-          <button class="btn btn--secondary">Github</button>
+          <button class="button--bestia">
+            <div class="button__bg"></div>
+            <span>Live</span>
+          </button>
+          <button class="button--bestia button--bestia--secondary">
+            <div class="button__bg"></div>
+            <span>Github</span>
+          </button>
         </div>
       </div>
     </div>
 
-    <div class="card__images">
-      <img
-        :alt="project.title"
-        v-if="project.thumbnail"
-        :src="`./projects/${project.id}/${project.thumbnail}`"
-      />
-      <img
-        :alt="project.title"
+    <div class="card__images" data-warp>
+      <div class="card__images__image" v-if="project.thumbnail">
+        <img :alt="project.title" :src="`./projects/${project.id}/${project.thumbnail}`" />
+      </div>
+
+      <div
+        class="card__images__image"
         v-if="project.images.length"
         v-for="(image, i) of project.images"
         :key="i"
-        :src="`./projects/${project.id}/${image}`"
-      />
+      >
+        <img :alt="project.title" :src="`./projects/${project.id}/${image}`" />
+      </div>
     </div>
   </div>
 </template>
@@ -67,6 +71,7 @@ onMounted(() => {});
   flex-direction: column;
   align-items: flex-start;
   position: relative;
+  width: 100%;
 }
 
 .card__content--wrapper {
@@ -75,7 +80,7 @@ onMounted(() => {});
   align-items: flex-start;
   justify-content: flex-start;
   align-content: flex-start;
-  position: relative;
+  /* position: relative; */
 }
 
 /* Card content  */
@@ -160,18 +165,43 @@ onMounted(() => {});
   flex: 1 100%;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   row-gap: 8px;
   margin-inline: -12px;
   position: relative;
 }
 
-.card__images img {
-  display: block;
+.card__images__image {
+  position: relative;
+  overflow: hidden;
+  overflow: clip;
   border-radius: 1vmax;
+  width: 100%;
+  /* aspect-ratio: 1 / 0.8; */
   /* padding: 20px; */
-  margin: 1vw;
-  outline: 1vw solid rgba(255, 255, 255, 0.03);
-  /* transform-origin: center; */
+  outline: 2px solid rgba(255, 255, 255, 0.03);
+  transition: outline 0.3s ease-out;
+  /* outline-offset: -1vw; */
+}
+
+.card__images__image:hover {
+  outline-width: 3px;
+  outline-color: rgba(255, 255, 255, 0.06);
+}
+
+.card__images__image:hover > img {
+  scale: 1.03;
+}
+
+.card__images__image img {
+  display: block;
+  height: auto;
+  width: 100%;
+  object-fit: cover;
+  transform-origin: center;
+  will-change: transform;
+  margin-top: -10%;
+  transition: scale 0.5s ease-out;
 }
 
 @media (min-width: 675px) {
@@ -184,13 +214,14 @@ onMounted(() => {});
     flex: 0 0 41.67%;
     position: sticky;
     position: -webkit-sticky;
+    top: 15%;
     /* transform: translateY(-50%); */
-    top: 100px;
+    margin-bottom: 5%;
   }
   .card__content {
     max-width: 48ch;
 
-    /* 
+    /*
     margin-bottom: 30vh; */
   }
 
@@ -200,47 +231,49 @@ onMounted(() => {});
 
   .card__images {
     flex: 1 1 auto;
-    row-gap: 32px;
+    row-gap: 56px;
     margin-inline: 0px;
   }
 
-  @media (min-width: 1000px) {
-    .card__details {
-      flex-direction: row;
-      align-items: flex-start;
-      column-gap: 10%;
-    }
-    .card__details__list__title {
-      flex: 1;
-    }
-
-    .card__details__list {
-      flex-direction: column;
-      row-gap: 8px;
-      margin-right: 16px;
-    }
-
-    .card__details__list__entry:not(:last-child)::after {
-      content: "";
-    }
-
-    .card__details__list__entry {
-      list-style-position: inside;
-      padding-inline-start: 0.1em;
-    }
-
-    .card__details__list__entry::marker {
-      content: "\26AC\ ";
-      color: #67eae8;
-      margin-right: 4px;
-      font-size: 14px;
-    }
+  .card__images__image {
+    outline-width: 8px;
   }
 
-  .card__images img {
-    border-radius: 12px;
-    margin: 12px;
+  .card__images__image:hover {
     outline-width: 12px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .card__details {
+    flex-direction: row;
+    align-items: flex-start;
+    column-gap: 10%;
+  }
+  .card__details__list__title {
+    flex: 1;
+  }
+
+  .card__details__list {
+    flex-direction: column;
+    row-gap: 8px;
+    margin-right: 16px;
+  }
+
+  .card__details__list__entry:not(:last-child)::after {
+    content: "";
+  }
+
+  .card__details__list__entry {
+    list-style-position: inside;
+    padding-inline-start: 0.1em;
+  }
+
+  .card__details__list__entry::marker {
+    content: "\26AC\ ";
+    color: #67eae8;
+    margin-right: 4px;
+    font-size: 14px;
   }
 }
 </style>

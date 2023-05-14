@@ -4,28 +4,26 @@
     <div class="about">
       <figure class="about__content text--body">
         <figcaption class="about__p1">
-          Hallo, ich bin der Arkadiusz. Ein self-taught Frontend Entwickler aus
-          der Nähe von Mainz, Germany. Mein Interesse für die Programmierung
-          wurde bereits als Kind geweckt, wo ich simple HTML Seiten mit
-          Dreamweaver und Photoshop baute. Ich begann eine Ausbildung zum
-          Anlagenmechaniker und wurde anschließend vom Unternehmen übernommen,
-          wo ich bis heute noch arbeite.
+          Hallo, ich bin der Arkadiusz. Ein self-taught Frontend Entwickler aus der Nähe von Mainz, Germany.
+          Mein Interesse für die Programmierung wurde bereits als Kind geweckt, wo ich simple HTML Seiten mit
+          Dreamweaver und Photoshop baute. Ich begann eine Ausbildung zum Anlagenmechaniker und wurde
+          anschließend vom Unternehmen übernommen, wo ich bis heute noch arbeite.
         </figcaption>
         <div class="about__img">
           <img src="@/assets/images/portrait.jpg" alt="Arkadiusz Fritscher" />
         </div>
         <figcaption class="about__p2">
-          Im Jahr 2019 habe ich das erste Mal von Coding Bootcamps gehört, und
-          der Tatsache, dass Unternehmen Quereinsteiger nach nur 12 Wochen
-          Ausbildung einstellen. Ich hatte den Beschluss gefasst, meinen
-          geheimen Traum, als Programmierer zu arbeiten, wieder aufleben lassen.
-          Mittlerweile verheiratet und Vater von zwei kleinen Jungs habe ich
-          jede freie Minute dazu genutzt mir durch Lesen, Podcasts, Online
-          Videos und eigene Projekte mir das Programmieren, speziell das
-          Frontend selber beizubringen.
+          Im Jahr 2019 habe ich das erste Mal von Coding Bootcamps gehört, und der Tatsache, dass Unternehmen
+          Quereinsteiger nach nur 12 Wochen Ausbildung einstellen. Ich hatte den Beschluss gefasst, meinen
+          geheimen Traum, als Programmierer zu arbeiten, wieder aufleben lassen. Mittlerweile verheiratet und
+          Vater von zwei kleinen Jungs habe ich jede freie Minute dazu genutzt mir durch Lesen, Podcasts,
+          Online Videos und eigene Projekte mir das Programmieren, speziell das Frontend selber beizubringen.
         </figcaption>
         <div class="about__cta">
-          <button class="btn">Contact</button>
+          <button class="button--bestia">
+            <div class="button__bg"></div>
+            <span>Download my resume</span>
+          </button>
         </div>
       </figure>
     </div>

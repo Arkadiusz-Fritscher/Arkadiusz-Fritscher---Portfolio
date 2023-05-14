@@ -9,12 +9,14 @@
         </header>
         <main>
           <p class="text--body-lg contact__description">
-            Zurzeit bin ich aktiv auf der Suche nach einer Vollzeitstelle als
-            Frontend-Entwickler. Sollte ich Ihr Interesse geweckt haben,
-            kontaktieren Sie mich gerne über E-Mail oder LinkedIn.
+            Zurzeit bin ich aktiv auf der Suche nach einer Vollzeitstelle als Frontend-Entwickler. Sollte ich
+            Ihr Interesse geweckt haben, kontaktieren Sie mich gerne über E-Mail oder LinkedIn.
           </p>
           <div class="contact__cta">
-            <button class="btn">Send me a mail</button>
+            <button class="button--bestia button--bestia--secondary">
+              <div class="button__bg"></div>
+              <span>Send me a mail</span>
+            </button>
             <UiTheSocialIcons class="contact__socials" />
           </div>
         </main>

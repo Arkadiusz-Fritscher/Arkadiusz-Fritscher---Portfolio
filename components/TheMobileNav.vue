@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { spawn } from "child_process";
+
+// import { useRouter } from 'nuxt/app';
+
+const router = useRouter();
 const props = defineProps({
   isOpen: {
     type: Boolean,
@@ -10,28 +15,50 @@ const props = defineProps({
   },
 });
 
+const emits = defineEmits(["update:isOpen"]);
+
+// Close mobile menu if viewport is over n px
+const onResize = () => {
+  const maxWith = 630;
+  const winWidth = window.innerWidth;
+
+  if (winWidth >= maxWith) {
+    emits("update:isOpen", false);
+  }
+};
+
 onMounted(() => {
   //   Disable scrolling while menu is open
   document.body.style.overflow = "hidden";
+
+  window.addEventListener("resize", onResize);
 });
 
 onUnmounted(() => {
   //   Enable scrolling while menu is close
   document.body.style.overflow = "initial";
+  window.removeEventListener("resize", onResize);
 });
+
+const closeMenu = (url: string) => {
+  emits("update:isOpen", false);
+  router.replace(url);
+};
 </script>
 
 <template>
-  <div class="mobile-nav">
+  <div class="mobile-nav" data-lenis-prevent>
     <div class="menu">
       <div class="links" v-if="links">
         <NuxtLink
-          class="link"
-          v-for="link in links"
+          class="links__link"
+          v-for="(link, i) in links"
           :key="link.title"
-          :to="link.url"
-          >{{ link.title }}</NuxtLink
+          @click="closeMenu(link.url)"
         >
+          <span class="link__number">{{ `${i + 1}. ` }}</span>
+          <span class="link__title">{{ link.title }}</span>
+        </NuxtLink>
       </div>
     </div>
     <div class="contact">
@@ -49,20 +76,14 @@ onUnmounted(() => {
 
 <style scoped>
 .mobile-nav {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background: linear-gradient(
-    192.05deg,
-    #260e31 0%,
-    #23153e 30.69%,
-    #22153e 67.67%,
-    #162530 100%
-  );
-  z-index: 100;
+  background: linear-gradient(192.05deg, #260e31 0%, #23153e 30.69%, #22153e 67.67%, #162530 100%);
   padding: 20vh 16px 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 14;
 }
 
 .menu {
@@ -74,10 +95,25 @@ onUnmounted(() => {
   row-gap: 6px;
 }
 
-.link {
+.links__link {
   font-size: 48px;
   font-weight: 600;
   padding: 8px 4px;
+}
+
+.link__number {
+  font-weight: 400;
+  opacity: 0.4;
+  font-size: 16px;
+  margin-right: 1ch;
+}
+
+.links__link:hover {
+  cursor: pointer;
+}
+
+.links__link:hover .link__title {
+  color: var(--color-highlight);
 }
 
 .contact {
