@@ -2,6 +2,8 @@
 import { projects } from "@/projects";
 import { scrollAnimation } from "@/components/project/projectAnimation";
 
+const sortedProjects = computed(() => projects.sort((a, b) => a.pos - b.pos));
+
 onMounted(() => {
   const projectEl = Array.from(document.querySelectorAll(`[data-project]`));
   if (!projectEl.length) return;
@@ -15,7 +17,7 @@ onMounted(() => {
       <UiSectionTitle>Projects</UiSectionTitle>
       <div v-if="projects.length" class="project__list">
         <ProjectCard
-          v-for="project in projects"
+          v-for="project in sortedProjects"
           :key="project.id"
           :project="project"
           :data-project="project.id"

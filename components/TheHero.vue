@@ -21,9 +21,10 @@ onMounted(() => {
       <div class="hero__title text--caption">Arkadiusz Fritscher</div>
       <h1 class="hero__headline text--hero" ref="heroCenterRef">Frontend developer</h1>
       <p class="hero__description text--body">
-        As a self-taught frontend developer, I am passionate about creating engaging user experiences that
-        drive results. My goal is to work at a company where I can bring innovative front-end designs and
-        development solutions to life. Let's work together to achieve your goals
+        As a self-taught frontend developer, I am <b>passionate</b> about creating
+        <b>engaging user experiences</b> that <b>drive results</b>. My goal is to
+        <b>work at a company</b> where I can bring innovative front-end designs and development solutions to
+        life. Let's work together to achieve your goals
       </p>
       <button class="btn__cta btn" @click="$router.push('#contact')">Contact me</button>
     </div>

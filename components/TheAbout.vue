@@ -77,7 +77,7 @@ figcaption {
   width: 100%;
   border-radius: 1.4vmax;
   overflow: hidden;
-  max-height: 60vh;
+  max-height: 600px;
   min-height: 320px;
 }
 

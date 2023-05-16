@@ -75,6 +75,10 @@ body,
   letter-spacing: 0.03em;
 }
 
+.text--body b {
+  font-weight: 600;
+}
+
 .text--body-lg {
   font-size: clamp(1.125rem, 1.0013rem + 0.5277vw, 1.5rem);
   font-weight: 400;
