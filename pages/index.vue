@@ -5,9 +5,9 @@ useHead({
     { name: "description", content: "Entwickler Portfolio von Arkadiusz Fritscher" },
     { name: "msapplication-TileColor", content: "#20163e" },
     { name: "theme-color", content: "#20163E" },
-    { name: "robots", content: "index, follow" },
-    { name: "googlebot", content: "index, follow" },
-    { name: "google", content: "notranslate" },
+    // { name: "robots", content: "index, follow" },
+    // { name: "googlebot", content: "index, follow" },
+    // { name: "google", content: "notranslate" },
   ],
   link: [
     {
