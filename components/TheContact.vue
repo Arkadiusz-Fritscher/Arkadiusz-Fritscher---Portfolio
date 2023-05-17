@@ -13,10 +13,10 @@
             Ihr Interesse geweckt haben, kontaktieren Sie mich gerne über E-Mail oder LinkedIn.
           </p>
           <div class="contact__cta">
-            <button class="button--bestia button--bestia--secondary">
+            <a class="button--bestia button--bestia--secondary" href="mailto:fritscher.dev@gmail.com">
               <div class="button__bg"></div>
               <span>Schreib mir eine Mail</span>
-            </button>
+            </a>
             <UiTheSocialIcons class="contact__socials" />
           </div>
         </main>

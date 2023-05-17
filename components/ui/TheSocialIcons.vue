@@ -2,9 +2,11 @@
 
 <template>
   <div class="socials">
-    <a class="social__link" href=""><IconsIconLinkedin /></a>
-    <a class="social__link" href=""><IconsIconGithub /></a>
-    <a class="social__link" href=""><IconsIconMail /></a>
+    <a class="social__link" href="https://www.linkedin.com/in/arkadiusz-fritscher-08aaa31a5/"
+      ><IconsIconLinkedin
+    /></a>
+    <a class="social__link" href="https://github.com/Arkadiusz-Fritscher"><IconsIconGithub /></a>
+    <a class="social__link" href="mailto:fritscher.dev@gmail.com"><IconsIconMail /></a>
   </div>
 </template>
 
