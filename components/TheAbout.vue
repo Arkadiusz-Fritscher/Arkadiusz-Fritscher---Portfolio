@@ -13,16 +13,16 @@
           <!-- <img src="@/assets/images/arkadiusz-fritscher@1x.jpg" alt="Arkadiusz Fritscher" /> -->
 
           <img
-            src="arkadiusz-fritscher@0,5x.jpg"
+            src="./arkadiusz-fritscher@0,5x.jpg"
             alt="Arkadiusz Fritscher"
             width="665"
             height="887"
             loading="lazy"
             decoding="async"
             srcset="
-              arkadiusz-fritscher@0,5x.jpg   665w,
-              arkadiusz-fritscher@0,75x.jpg  997w,
-              arkadiusz-fritscher@1x.jpg    1330w
+              /arkadiusz-fritscher@0,5x.jpg   665w,
+              /arkadiusz-fritscher@0,75x.jpg  997w,
+              /arkadiusz-fritscher@1x.jpg    1330w
             "
           />
         </div>
