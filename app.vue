@@ -57,8 +57,7 @@ onMounted(() => {
 
 #__nuxt::after {
   content: "";
-  /* content: url(@/assets/images/hero@1.jpg); */
-  background-image: url(@/assets/images/hero@1.jpg);
+  background-image: image-set(url(/hero@0,75x.jpg) 1x, url(/hero@1x.jpg) 2x);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 600px;

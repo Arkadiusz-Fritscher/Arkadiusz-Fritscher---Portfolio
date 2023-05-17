@@ -12,18 +12,17 @@
         <div class="about__img">
           <!-- <img src="@/assets/images/arkadiusz-fritscher@1x.jpg" alt="Arkadiusz Fritscher" /> -->
 
-          <img
-            :src="`/arkadiusz-fritscher@0,5x.jpg`"
+          <nuxt-img
+            :src="`/arkadiusz-fritscher.jpg`"
             alt="Arkadiusz Fritscher"
-            width="665"
-            height="887"
-            loading="lazy"
+            width="317"
+            height="422"
             decoding="async"
-            :srcset="`
-              /arkadiusz-fritscher@0,5x.jpg   665w,
-              /arkadiusz-fritscher@0,75x.jpg  997w,
-              /arkadiusz-fritscher@1x.jpg    1330w
-            `"
+            quality="80"
+            loading="lazy"
+            format="webp"
+            sizes="xs: 100vw sm:80vw md:60vw lg:50vw xl:600px"
+            placeholder
           />
         </div>
         <figcaption class="about__p2">

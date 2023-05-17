@@ -51,16 +51,16 @@ const props = defineProps({
     <div class="card__images" data-warp>
       <div class="card__images__image" v-if="project.thumbnail">
         <nuxt-img
-          :src="`/projects/${project.id}/${project.thumbnail}@0,5x.jpg`"
+          :src="`/projects/${project.id}/${project.thumbnail}.jpg`"
           :alt="project.title"
-          width="665"
-          height="500"
+          width="358"
+          height="269"
+          quality="80"
           decoding="async"
           loading="lazy"
           format="webp"
-          :srcset="`/projects/${project.id}/${project.thumbnail}@0,5x.jpg 665w,
- /projects/${project.id}/${project.thumbnail}@0,75x.jpg 998w,
- /projects/${project.id}/${project.thumbnail}@1x.jpg 1330w`"
+          sizes="xs: 100vw sm:100vw md:60vw xl:900px"
+          placeholder
         />
       </div>
 
@@ -71,16 +71,16 @@ const props = defineProps({
         :key="i"
       >
         <nuxt-img
-          :src="`/projects/${project.id}/${image}@0,5x.jpg`"
+          :src="`/projects/${project.id}/${image}.jpg`"
           :alt="project.title"
-          width="665"
-          height="500"
-          loading="lazy"
+          width="358"
+          height="269"
           decoding="async"
+          loading="lazy"
+          quality="80"
           format="webp"
-          :srcset="`/projects/${project.id}/${image}@0,5x.jpg 665w,
- /projects/${project.id}/${image}@0,75x.jpg 998w,
- /projects/${project.id}/${image}@1x.jpg 1330w`"
+          sizes="xs: 100vw sm:100vw md:50vw xl:900px"
+          placeholder
         />
       </div>
     </div>
