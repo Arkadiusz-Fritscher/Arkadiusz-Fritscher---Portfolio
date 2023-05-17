@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Lenis from "@studio-freight/lenis";
 import { scrollDistance, roundTo, MathUtils } from "@/composables/utils";
-
+const $img = useImage();
 const sparksParallax = () => {
   const sparks = Array.from(document.querySelectorAll(".spark"));
 
@@ -24,6 +24,14 @@ const sparksParallax = () => {
   scrollDistance(moveSparks);
 };
 
+const createBgImg = () => {
+  const winSize = window.innerWidth;
+  const imgSize = winSize > 1000 ? 900 : 500;
+  const img = $img("/hero@1x.jpg", { width: imgSize });
+  document.documentElement.style.setProperty("--hero-img", `url(${img})`);
+  return img;
+};
+
 onMounted(() => {
   if (window) {
     const lenis = new Lenis({ lerp: 0.1 });
@@ -37,6 +45,9 @@ onMounted(() => {
   }
 
   sparksParallax();
+  createBgImg();
+
+  window.addEventListener("resize", createBgImg);
 });
 </script>
 
@@ -57,7 +68,7 @@ onMounted(() => {
 
 #__nuxt::after {
   content: "";
-  background-image: image-set(url(/hero@0,75x.jpg) 1x, url(/hero@1x.jpg) 2x);
+  background-image: var(--hero-img, "");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 600px;
