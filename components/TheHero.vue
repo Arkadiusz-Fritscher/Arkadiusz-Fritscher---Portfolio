@@ -19,7 +19,7 @@ onMounted(() => {
   <header class="header" id="home" ref="hero">
     <div class="hero">
       <div class="hero__title text--caption">Arkadiusz Fritscher</div>
-      <h1 class="hero__headline text--hero" ref="heroCenterRef">Frontend developer</h1>
+      <h1 class="hero__headline text--hero" ref="heroCenterRef">Frontend Entwickler</h1>
       <p class="hero__description text--body">
         Als <b>self-taught Frontend-Entwickler</b> bin ich leidenschaftlich daran interessiert, ansprechende
         Benutzererlebnisse zu schaffen, die <b>Ergebnisse erzielen</b>. Mein Ziel ist es, bei einem

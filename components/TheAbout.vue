@@ -10,7 +10,21 @@
           anschließend vom Unternehmen übernommen, wo ich bis heute noch arbeite.
         </figcaption>
         <div class="about__img">
-          <img src="@/assets/images/portrait.jpg" alt="Arkadiusz Fritscher" />
+          <!-- <img src="@/assets/images/arkadiusz-fritscher@1x.jpg" alt="Arkadiusz Fritscher" /> -->
+
+          <img
+            src="arkadiusz-fritscher@0,5x.jpg"
+            alt="Arkadiusz Fritscher"
+            width="665"
+            height="887"
+            loading="lazy"
+            decoding="async"
+            srcset="
+              arkadiusz-fritscher@0,5x.jpg   665w,
+              arkadiusz-fritscher@0,75x.jpg  998w,
+              arkadiusz-fritscher@1x.jpg    1330w
+            "
+          />
         </div>
         <figcaption class="about__p2">
           Im Jahr 2019 habe ich das erste Mal von Coding Bootcamps gehört, und der Tatsache, dass Unternehmen
