@@ -26,22 +26,8 @@ onMounted(() => {
         Unternehmen zu arbeiten, wo ich innovative Frontend-Designs und Entwicklungs-Lösungen zum Leben
         erwecken kann. Lassen Sie uns <b>zusammenarbeiten, um Ihre Ziele zu erreichen</b>.
       </p>
-      <button class="btn__cta btn" @click="$router.push('#contact')">Contact me</button>
+      <button class="btn__cta btn" @click="$router.push('#contact')">Schreib mir</button>
     </div>
-    <!-- <img
-      src=""
-      alt=""
-      ref="heroImage"
-      class="hero__image"
-      width="900"
-      height="840"
-      decoding="async"
-      srcset="
-        @/assets/images/hero@0.5.jpg  450w,
-        @/assets/images/hero@0.75.jpg 675w,
-        @/assets/images/hero@1.jpg    900w
-      "
-    /> -->
   </header>
 </template>
 

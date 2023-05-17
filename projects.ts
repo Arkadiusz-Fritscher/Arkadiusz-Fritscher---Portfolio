@@ -29,8 +29,8 @@ export const projects: Project[] = [
     stack: ["Vue 3", "Javascript", "Quasar", "Html", "Css"],
     services: ["Konzeption", "Design", "Entwicklung"],
     links: {
-      live: "",
-      github: "",
+      live: "https://bilder-sortieren.vercel.app",
+      github: "https://github.com/Arkadiusz-Fritscher/bilder-sortieren-frontend",
     },
     thumbnail: "bilder-gps-sortieren-screens",
     images: ["bilder-gps-sortieren"],
