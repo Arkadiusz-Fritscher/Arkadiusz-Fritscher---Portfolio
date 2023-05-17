@@ -86,7 +86,7 @@ body,
   letter-spacing: 0.02em;
 }
 
-.text--h3 {
+.text--h2 {
   font-weight: 700;
   font-size: clamp(1.75rem, 1.2965rem + 1.9349vw, 3.125rem);
   line-height: 1;

@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <button name="menu">
+  <button id="menu" aria-label="Mobile navigation">
     <div class="menu" :class="[isOpen ? 'open' : 'close']">
       <span class="line" />
       <span class="line" />

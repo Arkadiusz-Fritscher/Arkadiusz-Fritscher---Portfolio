@@ -50,11 +50,6 @@ onMounted(() => {
 </template>
 
 <style>
-@import url(@/assets/css/lensi.css);
-* {
-  /* outline: 1px dotted hsla(0, 16%, 85%, 0.4); */
-}
-
 #__nuxt {
   position: relative;
   /* overflow: hidden; */
