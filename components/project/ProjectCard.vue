@@ -199,7 +199,8 @@ const props = defineProps({
   position: relative;
   overflow: hidden;
   /* overflow: clip; */
-  border-radius: 1vmax;
+  border-radius: 8px;
+  border-radius: 0.5vmax;
   width: 100%;
   /* aspect-ratio: 1 / 0.8; */
   /* padding: 20px; */

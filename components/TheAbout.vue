@@ -54,7 +54,8 @@
 .about {
   background-color: #e2deeb;
   color: var(--color-gray-4);
-  border-radius: 1.5vmax;
+  border-radius: 12px;
+  border-radius: 0.8vmax;
   padding: 32px 24px;
   margin-inline: auto;
   margin-inline: -4%;
@@ -93,7 +94,8 @@ figcaption {
 .about__img {
   grid-area: img;
   width: 100%;
-  border-radius: 1.4vmax;
+  border-radius: 8px;
+  border-radius: 0.7vmax;
   overflow: hidden;
 }
 
