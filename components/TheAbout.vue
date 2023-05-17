@@ -1,6 +1,6 @@
 <template>
   <section id="about" class="container">
-    <UiSectionTitle class="section__title">About me</UiSectionTitle>
+    <UiSectionTitle class="section__title">Über mich</UiSectionTitle>
     <div class="about">
       <figure class="about__content text--body">
         <figcaption class="about__p1">

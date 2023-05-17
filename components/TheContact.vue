@@ -1,6 +1,6 @@
 <template>
   <section id="contact" class="container">
-    <UiSectionTitle>Contact</UiSectionTitle>
+    <UiSectionTitle>Kontakt</UiSectionTitle>
     <div class="contact-wrapper">
       <div class="contact">
         <header class="contact__title">
