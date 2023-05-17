@@ -14,7 +14,7 @@ onMounted(() => {
 <template>
   <main id="projects">
     <div class="container">
-      <UiSectionTitle>Projects</UiSectionTitle>
+      <UiSectionTitle>Private Projekte</UiSectionTitle>
       <div v-if="projects.length" class="project__list">
         <ProjectCard
           v-for="project in sortedProjects"

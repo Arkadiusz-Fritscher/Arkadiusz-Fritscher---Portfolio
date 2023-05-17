@@ -22,7 +22,7 @@
         <div class="about__cta">
           <button class="button--bestia">
             <div class="button__bg"></div>
-            <span>Download my resume</span>
+            <span>Zum Lebenslauf</span>
           </button>
         </div>
       </figure>

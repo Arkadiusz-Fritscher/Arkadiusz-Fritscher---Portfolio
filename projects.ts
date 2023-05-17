@@ -44,10 +44,10 @@ export const projects: Project[] = [
     Das Hauptziel dieses Projekts bestand darin, eine ansprechende und zugleich simple Webseite zu entwickeln, auf der ich meine Projekte und mich selbst präsentieren kann. Darüber hinaus war es wichtig, eine unkomplizierte Kontaktmöglichkeit zu schaffen.
     `,
     stack: ["Vue", "Javascript", "Html", "Css"],
-    services: ["Developing", "Design", "Concept"],
+    services: ["Konzeption", "Design", "Entwicklung"],
     links: {
       live: "https://fritscher.dev",
-      github: "",
+      github: "https://github.com/Arkadiusz-Fritscher/Arkadiusz-Fritscher---Portfolio",
     },
     thumbnail: "portfolio-1",
     images: ["portfolio-2", "portfolio-3"],
@@ -61,10 +61,10 @@ export const projects: Project[] = [
     Ein CSS Clamp Generator ist ein Tool, das basierend auf den Eingabewerten wie Mindestgröße, Maximalgröße, Min. Schriftgröße und Max. Schriftgröße eine Formel für die CSS clamp()-Funktion generiert. Diese Formel ermöglicht es Entwicklern, flexibles und responsives Design zu implementieren, indem sie den optimalen Wertebereich für Elementgrößen und Schriftgrößen festlegt.
     `,
     stack: ["Vue", "Html", "Css"],
-    services: ["Design", "Entwicklung"],
+    services: ["Konzeption", "Design", "Entwicklung"],
     links: {
-      live: "",
-      github: "",
+      live: "https://clamp-generator.vercel.app/",
+      github: "https://github.com/Arkadiusz-Fritscher/clamp-generator-lite",
     },
     thumbnail: "clamp-1",
     images: ["clamp-3", "clamp-4"],

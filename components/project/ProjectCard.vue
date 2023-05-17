@@ -18,7 +18,7 @@ const props = defineProps({
         <p class="card__description text--body">{{ project.description }}</p>
         <div class="card__details">
           <ul class="card__details__list">
-            <li class="card__details__list__title">Services</li>
+            <li class="card__details__list__title">Leistungen</li>
             <li
               class="card__details__list__entry text--caption"
               v-for="(service, i) of project.services"
@@ -29,7 +29,7 @@ const props = defineProps({
           </ul>
 
           <ul class="card__details__list">
-            <li class="card__details__list__title">Stack</li>
+            <li class="card__details__list__title">Technologie</li>
             <li class="card__details__list__entry text--caption" v-for="(entry, i) of project.stack" :key="i">
               {{ entry }}
             </li>
@@ -170,6 +170,10 @@ const props = defineProps({
   gap: 24px;
   padding-top: 32px;
   padding-bottom: 32px;
+}
+
+.button--bestia span {
+  text-transform: capitalize;
 }
 
 .btn {

@@ -15,7 +15,7 @@
           <div class="contact__cta">
             <button class="button--bestia button--bestia--secondary">
               <div class="button__bg"></div>
-              <span>Send me a mail</span>
+              <span>Schreib mir eine Mail</span>
             </button>
             <UiTheSocialIcons class="contact__socials" />
           </div>

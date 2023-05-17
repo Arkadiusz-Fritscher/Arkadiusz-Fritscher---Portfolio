@@ -4,15 +4,15 @@ import MobileMenuButton from "@/components/ui/MobileMenuButton.vue";
 
 const links = [
   {
-    title: "Projects",
+    title: "Projekte",
     url: "#projects",
   },
   {
-    title: "About me",
+    title: "Über mich",
     url: "#about",
   },
   {
-    title: "Contact",
+    title: "Kontakt",
     url: "#contact",
     highlighted: true,
   },

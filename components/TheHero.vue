@@ -21,10 +21,10 @@ onMounted(() => {
       <div class="hero__title text--caption">Arkadiusz Fritscher</div>
       <h1 class="hero__headline text--hero" ref="heroCenterRef">Frontend developer</h1>
       <p class="hero__description text--body">
-        As a self-taught frontend developer, I am <b>passionate</b> about creating
-        <b>engaging user experiences</b> that <b>drive results</b>. My goal is to
-        <b>work at a company</b> where I can bring innovative front-end designs and development solutions to
-        life. Let's work together to achieve your goals
+        Als <b>self-taught Frontend-Entwickler</b> bin ich leidenschaftlich daran interessiert, ansprechende
+        Benutzererlebnisse zu schaffen, die <b>Ergebnisse erzielen</b>. Mein Ziel ist es, bei einem
+        Unternehmen zu arbeiten, wo ich innovative Frontend-Designs und Entwicklungs-Lösungen zum Leben
+        erwecken kann. Lassen Sie uns <b>zusammenarbeiten, um Ihre Ziele zu erreichen</b>.
       </p>
       <button class="btn__cta btn" @click="$router.push('#contact')">Contact me</button>
     </div>

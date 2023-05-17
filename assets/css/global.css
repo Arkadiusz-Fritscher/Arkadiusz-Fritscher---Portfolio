@@ -215,7 +215,6 @@ body,
   display: block;
   position: relative;
   padding: 0.9rem 2.4rem;
-  text-transform: capitalize;
   text-align: center;
   /* mix-blend-mode: difference; */
 }
