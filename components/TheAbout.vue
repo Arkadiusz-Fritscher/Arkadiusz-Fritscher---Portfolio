@@ -21,7 +21,7 @@
             decoding="async"
             srcset="
               arkadiusz-fritscher@0,5x.jpg   665w,
-              arkadiusz-fritscher@0,75x.jpg  998w,
+              arkadiusz-fritscher@0,75x.jpg  997w,
               arkadiusz-fritscher@1x.jpg    1330w
             "
           />
