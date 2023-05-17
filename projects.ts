@@ -32,40 +32,58 @@ export const projects: Project[] = [
       live: "",
       github: "",
     },
-    thumbnail: "bilder-gps-sortieren-screens@1x.jpg",
-    images: ["bilder-gps-sortieren@1x.jpg"],
+    thumbnail: "bilder-gps-sortieren-screens",
+    images: ["bilder-gps-sortieren"],
   },
   {
     id: 2,
     pos: 1,
     title: "Mein Portfolio 2023",
-    date: "February 2022",
+    date: "Mai 2023",
     description: `
     Das Hauptziel dieses Projekts bestand darin, eine ansprechende und zugleich simple Webseite zu entwickeln, auf der ich meine Projekte und mich selbst präsentieren kann. Darüber hinaus war es wichtig, eine unkomplizierte Kontaktmöglichkeit zu schaffen.
     `,
     stack: ["Vue", "Javascript", "Html", "Css"],
     services: ["Developing", "Design", "Concept"],
     links: {
-      live: "",
+      live: "https://fritscher.dev",
       github: "",
     },
-    thumbnail: "img-2.jpg",
-    images: ["img-1.jpg"],
+    thumbnail: "portfolio-1",
+    images: ["portfolio-2", "portfolio-3"],
   },
   {
     id: 3,
     pos: 3,
     title: "CSS clamp generator",
-    date: "November 2022",
-    description:
-      "As a self-taught frontend developer, I am passionate about creating engaging user experiences that drive results. My goal is to work at a company where I can bring innovative front-end designs and development solutions to life. Let's work together to achieve your goals",
-    stack: ["Vue"],
-    services: ["Developing"],
+    date: "März 2022",
+    description: `
+    Ein CSS Clamp Generator ist ein Tool, das basierend auf den Eingabewerten wie Mindestgröße, Maximalgröße, Min. Schriftgröße und Max. Schriftgröße eine Formel für die CSS clamp()-Funktion generiert. Diese Formel ermöglicht es Entwicklern, flexibles und responsives Design zu implementieren, indem sie den optimalen Wertebereich für Elementgrößen und Schriftgrößen festlegt.
+    `,
+    stack: ["Vue", "Html", "Css"],
+    services: ["Design", "Entwicklung"],
     links: {
       live: "",
       github: "",
     },
-    thumbnail: "clamp-1@1x.jpg",
-    images: ["clamp-3@1x.jpg", "clamp-4@1x.jpg"],
+    thumbnail: "clamp-1",
+    images: ["clamp-3", "clamp-4"],
+  },
+  {
+    id: 4,
+    pos: 4,
+    title: "Pixelperfect Preisgestaltungs Komponente",
+    date: "Juli 2022",
+    description: `
+    Eine Challenge von Frontendmentor.io. Frontendmentor ist eine Plattform für Frontend-Entwickler, die praktische Projekte und Herausforderungen bereitstellt, um Fähigkeiten zu verbessern und Erfahrungen zu sammeln. Mit Designvorlagen und Upload-Möglichkeiten erhalten Entwickler wertvolles Feedback und Bewertungen von der Community.
+    `,
+    stack: ["Vue", "Html", "Css"],
+    services: ["Entwicklung"],
+    links: {
+      live: "https://www.frontendmentor.io/solutions/solution-for-interactive-pricing-component-with-sass-and-javascript-g8Sb-u7UP",
+      github: "https://github.com/Arkadiusz-Fritscher/fm-solution__Interactive-pricing-component",
+    },
+    thumbnail: "mentor-2",
+    images: ["mentor-1"],
   },
 ];

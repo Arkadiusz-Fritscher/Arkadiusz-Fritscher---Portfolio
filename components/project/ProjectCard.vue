@@ -36,21 +36,31 @@ const props = defineProps({
           </ul>
         </div>
         <div class="card__cta">
-          <button class="button--bestia">
+          <a class="button--bestia" v-for="(link, i) in project.links" :key="i" :href="link">
             <div class="button__bg"></div>
-            <span>Live</span>
-          </button>
-          <button class="button--bestia button--bestia--secondary">
+            <span>{{ i }}</span>
+          </a>
+          <!-- <button class="button--bestia button--bestia--secondary">
             <div class="button__bg"></div>
             <span>Github</span>
-          </button>
+          </button> -->
         </div>
       </div>
     </div>
 
     <div class="card__images" data-warp>
       <div class="card__images__image" v-if="project.thumbnail">
-        <img :alt="project.title" :src="`./projects/${project.id}/${project.thumbnail}`" />
+        <img
+          :src="`./projects/${project.id}/${project.thumbnail}@0,5x.jpg`"
+          :alt="project.title"
+          width="665"
+          height="500"
+          loading="lazy"
+          decoding="async"
+          :srcset="`./projects/${project.id}/${project.thumbnail}@0,5x.jpg 665w,
+ ./projects/${project.id}/${project.thumbnail}@0,75x.jpg 998w,
+ ./projects/${project.id}/${project.thumbnail}@1x.jpg 1330w`"
+        />
       </div>
 
       <div
@@ -59,7 +69,17 @@ const props = defineProps({
         v-for="(image, i) of project.images"
         :key="i"
       >
-        <img :alt="project.title" :src="`./projects/${project.id}/${image}`" />
+        <img
+          :src="`./projects/${project.id}/${image}@0,5x.jpg`"
+          :alt="project.title"
+          width="665"
+          height="500"
+          loading="lazy"
+          decoding="async"
+          :srcset="`./projects/${project.id}/${image}@0,5x.jpg 665w,
+ ./projects/${project.id}/${image}@0,75x.jpg 998w,
+ ./projects/${project.id}/${image}@1x.jpg 1330w`"
+        />
       </div>
     </div>
   </div>
@@ -85,7 +105,6 @@ const props = defineProps({
 
 /* Card content  */
 .card__content {
-  max-width: 48ch;
   display: flex;
   flex-direction: column;
 }
@@ -101,16 +120,18 @@ const props = defineProps({
 }
 
 .card__title {
-  margin-bottom: 16px;
+  padding-bottom: 16px;
   background: var(--color-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
+  line-break: auto;
 }
 
 .card__description {
-  margin-bottom: 24px;
+  padding-bottom: 24px;
+  max-width: 48ch;
   color: var(--color-gray-2);
 }
 
@@ -166,8 +187,8 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  row-gap: 8px;
-  margin-inline: -12px;
+  row-gap: 20px;
+  margin-inline: -3%;
   position: relative;
 }
 
@@ -196,7 +217,7 @@ const props = defineProps({
 .card__images__image img {
   display: block;
   height: auto;
-  width: 100%;
+  /* width: 100%; */
   object-fit: cover;
   transform-origin: center;
   will-change: transform;
@@ -219,8 +240,6 @@ const props = defineProps({
     margin-bottom: 5%;
   }
   .card__content {
-    max-width: 48ch;
-
     /*
     margin-bottom: 30vh; */
   }
@@ -230,7 +249,7 @@ const props = defineProps({
   }
 
   .card__images {
-    flex: 1 1 auto;
+    flex: 1 1 100%;
     row-gap: 56px;
     margin-inline: 0px;
   }

@@ -33,14 +33,18 @@
 <script setup lang="ts"></script>
 
 <style scoped>
+#about {
+  margin-block: 56px;
+}
+
 .about {
   background-color: #e2deeb;
   color: var(--color-gray-4);
   border-radius: 1.5vmax;
   padding: 32px 24px;
-  margin-inline: -3%;
-  /* width: fit-content; */
   margin-inline: auto;
+  margin-inline: -4%;
+  /* width: fit-content; */
 }
 
 .section__title {
@@ -77,15 +81,13 @@ figcaption {
   width: 100%;
   border-radius: 1.4vmax;
   overflow: hidden;
-  max-height: 600px;
-  min-height: 320px;
 }
 
 .about__img img {
   display: block;
   object-fit: contain;
   object-position: center;
-  /* width: 100%; */
+  width: 100%;
   /* aspect-ratio: 3/4; */
   /* height: 100%; */
 }
@@ -108,6 +110,9 @@ figcaption {
 }
 
 @media (min-width: 920px) {
+  #about {
+    margin-block: 10vh;
+  }
   .about {
     padding: 6% 6%;
     margin-inline: auto;

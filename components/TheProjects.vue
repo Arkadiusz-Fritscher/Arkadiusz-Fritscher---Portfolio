@@ -35,7 +35,21 @@ onMounted(() => {
 .project__list {
   display: flex;
   flex-direction: column;
-  row-gap: 20vh;
+  row-gap: 56px;
   align-items: flex-start;
+}
+
+@media (min-width: 768px) {
+  .project__list {
+    row-gap: 72px;
+    /* background-color: aqua; */
+  }
+}
+
+@media (min-width: 1000px) {
+  .project__list {
+    row-gap: 20vh;
+    /* background-color: aqua; */
+  }
 }
 </style>
