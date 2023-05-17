@@ -53,13 +53,12 @@ const props = defineProps({
         <nuxt-img
           :src="`/projects/${project.id}/${project.thumbnail}.jpg`"
           :alt="project.title"
-          width="358"
-          height="269"
+          width="1330"
+          height="1000"
           quality="80"
-          decoding="async"
           loading="lazy"
           format="webp"
-          sizes="xs: 100vw sm:100vw md:60vw xl:900px"
+          sizes="xs:100vw sm:100vw md:60vw xl:900px"
           placeholder
         />
       </div>
@@ -73,13 +72,12 @@ const props = defineProps({
         <nuxt-img
           :src="`/projects/${project.id}/${image}.jpg`"
           :alt="project.title"
-          width="358"
-          height="269"
-          decoding="async"
+          width="1330"
+          height="1000"
           loading="lazy"
           quality="80"
           format="webp"
-          sizes="xs: 100vw sm:100vw md:50vw xl:900px"
+          sizes="xs:100vw sm:100vw md:50vw xl:900px"
           placeholder
         />
       </div>

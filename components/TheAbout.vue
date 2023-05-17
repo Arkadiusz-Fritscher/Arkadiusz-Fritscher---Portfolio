@@ -15,13 +15,12 @@
           <nuxt-img
             :src="`/arkadiusz-fritscher.jpg`"
             alt="Arkadiusz Fritscher"
-            width="317"
-            height="422"
-            decoding="async"
+            width="1330"
+            height="1773"
             quality="80"
             loading="lazy"
             format="webp"
-            sizes="xs: 100vw sm:80vw md:60vw lg:50vw xl:600px"
+            sizes="xs:100vw sm:80vw md:60vw lg:50vw xl:600px"
             placeholder
           />
         </div>
