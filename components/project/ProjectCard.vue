@@ -55,7 +55,6 @@ const props = defineProps({
           :alt="project.title"
           width="665"
           height="500"
-          loading="lazy"
           decoding="async"
           :srcset="`./projects/${project.id}/${project.thumbnail}@0,5x.jpg 665w,
  ./projects/${project.id}/${project.thumbnail}@0,75x.jpg 998w,
