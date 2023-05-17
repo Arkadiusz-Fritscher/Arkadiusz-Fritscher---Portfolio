@@ -58,7 +58,7 @@ const props = defineProps({
           quality="80"
           loading="lazy"
           format="webp"
-          sizes="xs:100vw sm:100vw md:60vw xl:900px"
+          sizes="xs:100vw sm:80vw md:50vw xl:700px"
           placeholder
         />
       </div>
@@ -77,7 +77,7 @@ const props = defineProps({
           loading="lazy"
           quality="80"
           format="webp"
-          sizes="xs:100vw sm:100vw md:50vw xl:900px"
+          sizes="xs:100vw sm:80vw md:50vw xl:700px"
           placeholder
         />
       </div>
