@@ -50,12 +50,14 @@ const props = defineProps({
 
     <div class="card__images" data-warp>
       <div class="card__images__image" v-if="project.thumbnail">
-        <img
+        <nuxt-img
           :src="`/projects/${project.id}/${project.thumbnail}@0,5x.jpg`"
           :alt="project.title"
           width="665"
           height="500"
           decoding="async"
+          loading="lazy"
+          format="webp"
           :srcset="`/projects/${project.id}/${project.thumbnail}@0,5x.jpg 665w,
  /projects/${project.id}/${project.thumbnail}@0,75x.jpg 998w,
  /projects/${project.id}/${project.thumbnail}@1x.jpg 1330w`"
@@ -68,13 +70,14 @@ const props = defineProps({
         v-for="(image, i) of project.images"
         :key="i"
       >
-        <img
+        <nuxt-img
           :src="`/projects/${project.id}/${image}@0,5x.jpg`"
           :alt="project.title"
           width="665"
           height="500"
           loading="lazy"
           decoding="async"
+          format="webp"
           :srcset="`/projects/${project.id}/${image}@0,5x.jpg 665w,
  /projects/${project.id}/${image}@0,75x.jpg 998w,
  /projects/${project.id}/${image}@1x.jpg 1330w`"
