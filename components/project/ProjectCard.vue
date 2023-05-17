@@ -195,7 +195,7 @@ const props = defineProps({
 .card__images__image {
   position: relative;
   overflow: hidden;
-  overflow: clip;
+  /* overflow: clip; */
   border-radius: 1vmax;
   width: 100%;
   /* aspect-ratio: 1 / 0.8; */
@@ -217,7 +217,6 @@ const props = defineProps({
 .card__images__image img {
   display: block;
   height: auto;
-  /* width: 100%; */
   object-fit: cover;
   transform-origin: center;
   will-change: transform;
@@ -256,6 +255,10 @@ const props = defineProps({
 
   .card__images__image {
     outline-width: 8px;
+  }
+
+  .card__images__image img {
+    width: 100%;
   }
 
   .card__images__image:hover {
