@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import { spawn } from "child_process";
-
-// import { useRouter } from 'nuxt/app';
-
 const router = useRouter();
 const props = defineProps({
   isOpen: {

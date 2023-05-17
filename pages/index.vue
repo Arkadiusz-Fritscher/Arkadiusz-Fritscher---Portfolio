@@ -36,22 +36,7 @@ useHead({
       sizes: "16x16",
       href: "/favicon-16x16.png",
     },
-
-    // {
-    //   rel: "icon",
-    //   type: "image/svg+xml",
-    //   href: "/favicon.svg",
-    // },
-    // {
-    //   rel: "alternate icon",
-    //   type: "image/png",
-    //   href: "/favicon.png",
-    // },
   ],
-  // bodyAttrs: {
-  //   class: "test",
-  // },
-  // script: [{ innerHTML: "console.log('Hello world')" }],
 });
 
 useServerSeoMeta({
