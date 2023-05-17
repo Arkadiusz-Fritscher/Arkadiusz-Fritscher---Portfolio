@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   ssr: true,
+  plugins: [{ src: "~/plugins/vercel.ts", mode: "client" }],
   modules: ["@nuxt/image-edge"],
   css: ["@/assets/css/reset.css", "@/assets/css/global.css", "@/assets/css/lensi.css"],
   app: {
