@@ -32,10 +32,12 @@
           Online Videos und eigene Projekte mir das Programmieren, speziell das Frontend selber beizubringen.
         </figcaption>
         <div class="about__cta">
-          <button class="button--bestia">
-            <div class="button__bg"></div>
-            <span>Zum Lebenslauf</span>
-          </button>
+          <a href="https://www.linkedin.com/in/arkadiusz-fritscher/">
+            <button class="button--bestia">
+              <div class="button__bg"></div>
+              <span>Zum Lebenslauf</span>
+            </button>
+          </a>
         </div>
       </figure>
     </div>
